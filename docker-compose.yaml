@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+    db_test:
+        image: postgres:latest
+        container_name: db
+        environment:
+            POSTGRES_USER: user
+            POSTGRES_PASSWORD: secret
+            POSTGRES_DB: first_db
+        ports:
+            - 6432:5432
+        volumes:
+            - ./pg_data:/var/lib/postgresql/data
+        
